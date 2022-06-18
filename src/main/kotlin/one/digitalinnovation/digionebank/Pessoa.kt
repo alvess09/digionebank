@@ -1,19 +1,8 @@
 package one.digitalinnovation.digionebank
 
-class Pessoa {
-    var nome: String = "Alves"
-    var cpf: String = "123.123.123.12"
-    private set
-
-    constructor()
-    fun pessoaInfo() = "$nome , $cpf"
-}
-fun main(){
-
-    val alves = Pessoa()
-
-    println(alves.nome)
-    println(alves.cpf)
-    println(alves.pessoaInfo())
-
-}
+open class Pessoa (
+    //colocamos a classe pessoa como open para que as classes que herdem de pessoa possam
+    // sobrescrever as propriedades da classe Pessoa ao herdar -> "polimorfismo"
+    open val nome: String = "Alves",
+    open val  cpf: String = "123.123.123.12"
+)
